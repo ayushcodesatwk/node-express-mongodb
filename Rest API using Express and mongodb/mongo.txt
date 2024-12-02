@@ -1,7 +1,7 @@
 check for connetion using this command- mongosh
 check for databases- show dbs 
-to create collection - db.createCollection('collectionName');
 to check for all collections- show collection
+to create collection - db.createCollection('collectionName');
 to insert data in the collection- db.collectionName.insert({'name': 'Ayush'});
 
 note- without any data inside of your db you'll not see your db in the show dbs, you'll need to enter some data inside of it 
