@@ -1,0 +1,22 @@
+first goto terminal and run npm init after creating app.js, enter all details.
+
+there are 2 types of tasks(request) Blocking(synchronous) tasks and non-blocking(asynchronous) tasks.
+Note: Always try to use non-blocking tasks.
+
+Node js Architecture:-
+
+Event queue: Event queue store all the request in queue data structure (FIFO). 
+Event Loop: Event loop takes a watch on event queue and whenever a request comes,
+    event loop checks whether it is a blocking or a non-blocking operation,
+    if it is a non-blocking operation then it process it and sends the response to the user.
+    if it is a blocking operation, blocking operation goes to the thread pool.(thread is like a worker)
+    if there are threads available thread pool assign a thread to blocking operation and
+    thread does its work goes back to thread pool and returns a response or result.
+
+handling url (uniform resource locator): to handle complex url we make use of 'npm i url' module in node js
+
+to use query parameteres pass true as a second argument inside myUrl
+Ex=  myUrl = url.parse(req.url, true);
+now we can make use of query we have passed like- name, userId etc.
+Ex= /about?myName=ayush&userId=5  (here myName and userId are query parameters)
+

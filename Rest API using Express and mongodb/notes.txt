@@ -1,0 +1,52 @@
+Dynamic Path Parameters
+Get /api/users/:id
+:id => Variable | Dynamic
+
+
+TOPICS TO READ-
+what are http protocol
+promises handle, error handle     
+debugger in node (how does it work)     -done
+api response, how to manage it.     
+what is dependency injection    
+routing in node js   -done
+mvc (model view controller) pattern       
+
+Headers- are extra informations which tells what type of data is present in the request or coming
+from the request.
+we can create custom header using-
+res.setHeader('X-myName', 'Ayush Pal');
+best practice is to write X- infront of the key.
+we can send headers at the request time in postman app itself for 
+request headers.
+
+
+Promises chaining--
+returning another promises inside of the .then()'s callback function
+and using it.
+
+
+Debug nodejs app--
+we can debug app using chrome dev tools using
+running this command in terminal-
+node --inspect-brk filename.js
+run this command in browser & goto- open dedicated devtools for node-
+chrome://inspect/#devices
+
+
+status codes--
+informational responses (100-199);
+successful responses (200-299)
+Redirection messages (300-399)
+Client error responses (400-499)
+Server error messages (500-599)
+
+
+DATABASES-
+There are 2 types of databases SQL (structured query language) and No-SQL database.
+The only difference between both of these is that SQL databases like- MySQL, PostgreSQL 
+they work on relations (RDBMS) they work on tables
+and No SQL databases works on documents.
+
+mongoDB is a No-SQL document based database which works on BSON format.
+best for node apps, it has strong support for aggregation pipes.
