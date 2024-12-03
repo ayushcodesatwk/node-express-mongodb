@@ -1,5 +1,5 @@
 const express = require("express");
-
+const router = express.Router();
 const {
   handleGetAllUsers,
   getUserById,
@@ -7,11 +7,9 @@ const {
   deleteUserById,
   handleCreateNewUser,
 } = require("../controllers/user");
-const router = express.Router();
 
 //Routes
 router.route("/").get(handleGetAllUsers).post(handleCreateNewUser);
-
 router
   .route("/:id")
   .get(getUserById)

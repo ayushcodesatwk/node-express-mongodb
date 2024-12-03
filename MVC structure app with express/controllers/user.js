@@ -46,7 +46,7 @@ async function handleCreateNewUser(req, res) {
     lastName: body.last_name,
     email: body.email,
     gender: body.gender,
-    jobTitle: body.job.title,
+    jobTitle: body.job_title,
   });
 
   return res.status(201).json({ msg: "Success", id: result._id });
