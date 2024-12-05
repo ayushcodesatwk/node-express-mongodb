@@ -1,0 +1,26 @@
+
+
+-- first create server using express and connect mongodb in index.js with nodemon, express, ejs & mongoose installed.
+-- create router, controller, model, view, middleware folders.
+-- inside of model we'll create schema with-- const UserSchema = new mongoose.Schema({email: {type:String, unique: true, required: true}) after that User = mongoose.model('collectionName', UserSchema); then export module.exports = { User }
+
+-- inside of routes folder we'll create router = express.Router();  than router.route("/").post(() => {}).get(() => {}) etc methods than we'll export the router.
+
+-- inside of index.js we'll get the router- userRouter = require('./routes/user'); and than use it like this- app.use("/", userRouter);
+  
+-- create all the functions in the controller folder user.js file and export it, to use these functions in the routes folder file.
+
+-- then set app.set("view engine", "ejs") inside index.js then inside of the views folder we'll create all ejs files like home, login, signup, we'll handle post operations using <form method=post> and route using ex- <a href= "/login">
+
+-- now inside of controller's file we'll get all details using req.body we'll handle and manage all CRUD operations using find, findOne, findByIdAndUpdate, findByIdAndDelete etc methods and use them in the routes folder file as we need them ex-  router.route("/").post(handlePost) 
+and than according to the conditions we'll return res.status(201).render("/home") or any other code or page we want.
+
+-- we'll create a public folder at the top and to get the files from it we'll use middleware- app.use(express.static('public'));
+
+-- now to secure password use bcrypt- set saltRound: 10, hashedPass = await bcrypt.has(password, saltRound);
+         now User.create(password: hashedPass);  
+
+-- now to match the password with the hashed password during login we need first find the user by matching the email then- entered password with the database password.
+await bcrypt.compare(password, user.password) it will return true if match.
+
+--

@@ -1,6 +1,12 @@
-const express = require("express");
+import express from "express";
+import {
+  handleCreateNewUser,
+  handleUserLogin,
+  deleteById,
+  handleUserLogout,
+} from "../controllers/user.js";
+
 const router = express.Router();
-const { handleCreateNewUser, handleUserLogin } = require("../controllers/user")
 
 //get the data using req.body and post
 router
@@ -10,12 +16,28 @@ router
   })
   .post(handleUserLogin);
 
+// home page post and get request
+router
+  .route("/home")
+  .get((req, res) => res.render("home"))
+  .post(handleUserLogout);
+
+router.route("/:id").delete(deleteById);
+
+// signup page post and get request
 router
   .route("/signup")
   .get((req, res) => {
-    return res.
-    render("signup");
+    return res.render("signup");
   })
   .post(handleCreateNewUser);
 
-module.exports = router;
+//forgot password page requests
+router
+  .route("/forgot")
+  .get((req, res) => {
+    return res.render("forgot");
+  })
+  .post(() => {});
+
+export default router;

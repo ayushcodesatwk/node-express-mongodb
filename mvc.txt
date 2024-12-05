@@ -1,0 +1,19 @@
+MVC is a design pattern commonly used in web development, including Node.js, 
+to organize and structure applications efficiently.
+-----------------------------------
+These are basically 3 components-
+MODEL VIEW CONTROLLER
+----------------------
+Controller manipulates Model and Model updates View.
+----------------------
+To avoid things from getting messy in an app.
+we make use MVC.
+----------------------
+create folders in the app:
+MODELS-     contains userSchema and 
+CONTROLLERS
+VIEWS
+ROUTES
+---------------------
+
+

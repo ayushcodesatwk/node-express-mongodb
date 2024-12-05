@@ -1,28 +1,28 @@
-const { connectDb } = require("./config/db");
-const path = require("path");
-const express = require("express");
+import connectDb  from "./config/db.js";
+import path from "path";
+import cookieParser from "cookie-parser";
+import express from "express";
+import router from './routes/user.js'
+;
 const app = express();
 const PORT = 4000;
-
-const userRoutes = require("./routes/user");
 
 //rendering server side using ejs
 //telling our "view engine" (with space) is ejs
 app.set("view engine", "ejs");
 
-//middlewares for parsing form data
+//middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-// here we are telling ejs that our files are stored in this (views) folder.
-app.set("views", path.resolve("./views"));
-// getting css from public folder
 app.use(express.static("public"));
-
-app.use("/", userRoutes);
-// app.use("/signup", loginRouter)
+app.use(cookieParser()); //now we can use req.cookie or res.cookie
 
 //connect db and start server
-
 connectDb("mongodb://127.0.0.1:27017/auth-db");
-app.listen(PORT, () => console.log("Server started"));
+
+// here we are telling ejs that our files are stored in this (views) folder.
+app.set("views", path.resolve("./src/views"));
+
+app.use(router)// or simply like this- app.use('/', userRoutes)
+
+app.listen(PORT, () => console.log("Server started at-", PORT));

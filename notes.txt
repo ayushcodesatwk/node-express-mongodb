@@ -1,0 +1,78 @@
+Dynamic Path Parameters
+Get /api/users/:id
+:id => Variable | Dynamic
+
+
+TOPICS TO READ-
+what are http protocol
+promises handle, error handle     
+debugger in node (how does it work)     -done
+api response, how to manage it.     
+what is dependency injection    
+routing in node js   -done
+mvc (model view controller) pattern       
+
+
+HEADERS- 
+headers are extra informations which tells what type of data is present in the request or coming
+from the request.
+we can create custom header using-
+res.setHeader('X-myName', 'Ayush Pal');
+best practice is to write X- infront of the key.
+we can send headers at the request time in postman app itself for 
+request headers.
+
+
+Promises chaining--
+returning another promises inside of the .then()'s callback function
+and using it.
+
+
+Debug nodejs app--
+we can debug app using chrome dev tools using
+running this command in terminal-
+node --inspect-brk filename.js
+run this command in browser & goto- open dedicated devtools for node-
+chrome://inspect/#devices
+
+
+status codes--
+informational responses (100-199);
+successful responses (200-299)
+Redirection messages (300-399)
+Client error responses (400-499)
+Server error messages (500-599)
+
+
+DATABASES-
+There are 2 types of databases SQL (structured query language) and No-SQL database.
+The only difference between both of these is that SQL databases like- MySQL, PostgreSQL etc
+they work on relations (RDBMS) they work on tables
+and No SQL databases works on documents. (mongodb, cassandra etc)
+
+mongoDB is a No-SQL document based database which works on BSON format.
+best for node apps, it has strong support for aggregation pipes.
+
+
+COOKIES-
+cookies are data files which are sent from the server and saved on client side (user's browser).
+cookies store authentication tokens that allow users to stay logged in in between sessions.
+we make use of cookie parser library in express to store cookies, we can use it like this- first we require cookie-parser in cookieParser than
+we use it as a middleware function- app.use(cookieParser()) this will return a function in the response- res.cookie(key, value, {maxAge: 90000)
+this will set a cookie, & to get the saved cookies we can get it in request using- console.log(req.cookies);
+note- by default the age is session (when we close the browser it will be deleted)
+
+this will make sure the cookie will only expire after this amount of time, even after closing the browser.
+using expire- res.cookie(key, value, {expires: new Date.now() + 86400000} ) this will expire in 24 hours.
+
+using maxAge- res.cookie(key, value, {maxAge: 30 * 24 * 60 * 60 * 1000, secure: true, httpOnly: true});
+# this will expire in 30 days, 
+# secure:true means the cookie will only sent when we have https connection, 
+# httpOnly:true means we cannot access it from the frontend and they can only be transferred via http protocol from server.
+
+
+
+
+
+
+
