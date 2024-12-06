@@ -33,6 +33,7 @@
         text-align: left;
       }
       input[type="email"],
+      input[type="text"],
       input[type="password"] {
         padding: 10px;
         margin-bottom: 20px;
@@ -72,6 +73,9 @@
     <div class="main-div">
       <h2>Signup</h2>
       <form action="#" class="form" method="post">
+        <label for="name" class="label">Name:</label>
+        <input type="text" name="name" id="name" required /><br />
+        
         <label for="email" class="label">Email:</label>
         <input type="email" name="email" id="email" required /><br />
 

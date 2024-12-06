@@ -36,4 +36,17 @@ handled cases-
 
 we can delete user with id
 
+---------------------
+
+forget password steps-
+
+install nodemailer, install randomString
+
+import in the controller.
+
+import nodemailer & randomString
+
+Note- randomString will be used to create a random token which we'll be saving at the time of creating user.
+
+insert token in userSchema type: String, default: "",
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Reset Password</title>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -69,23 +69,15 @@
   </head>
   <body>
     <div class="main-div">
-        <h2>Login</h2>
+      <h2>Reset Password</h2>
       <form action="#" class="form" method="post">
-        <label for="email" class="label">Email:</label>
-        <input type="email" name="email" id="email" required /><br />
+        <label for="password" class="label">New Password:</label>
+        <input type="password" name="password" id="password" required />
+        <label for="confpassword" class="label">Confirm Password:</label>
+        <input type="password" name="confpassword" id="confpassword" required />
 
-        <label for="password" class="label">Password:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          required
-        />
-        <button type="submit" class="button">login</button>
+        <button type="submit" class="button">reset password</button>
       </form>
-      <p>Don't have an account? <a href="/signup">Sign Up</a></p>
-      <p><a href="/forgot">forgot password</a></p>
-      <!-- <p><a href="/reset">reset password</a></p> -->
     </div>
   </body>
 </html>

@@ -8,7 +8,7 @@
       .h2 {
         margin-right: 20px;
         font-size: larger;
-        font: italic;
+        font-style: italic; /* Corrected from 'font' to 'font-style' */
       }
       #logout {
         padding: 20px;
@@ -27,7 +27,36 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        border: 2px black;
+        margin-top: 150px;
+        width: 50%;
+        margin: auto;
+        margin-top: 300px;
+        background-color: rgb(255, 173, 115);
+        border-radius: 15px;
+        padding: 10px;
+      }
+      form {
+        border: 2px solid black;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #store {
+        background-color: rgb(255, 255, 255); /* Set background color */
+        color: black; /* Text color */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px 20px; /* Padding for top/bottom and left/right */
+        font-size: 16px; /* Font size */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+      }
+
+      #store:hover {
+        background-color: rgb(255, 131, 55); /* Darker shade on hover */
+        transform: scale(1.05); /* Scale up slightly on hover */
+        color: white;
       }
     </style>
   </head>
@@ -35,35 +64,13 @@
     <div class="main-div">
       <form action="#" method="post">
         <h2 class="h2">Logged in Successfully... Welcome to the home page!</h2>
-        <button id="logout" type="submit">logout</button>
+        <button id="logout" type="submit">Logout</button>
       </form>
 
-      <h2 class="h2">Goto product page</h2>
-      <button id="store" type="button" onclick="handleClick()">Store</button>
+      <h2 class="h2">Go to product page</h2>
+      <a href="/home/product"
+        ><button id="store" type="button">Store</button></a
+      >
     </div>
   </body>
-
-  <script>
-    function handleClick (){
-      const authToken = document.cookie.split("; ")
-      .find((row) => row.startsWith("token"))
-      .split("=")[1]; //all cookies are saved together in one string
-      
-      console.log(authToken);
-      
-      fetch(`https://stackoverflow.com/questions/65818674/how-to-pass-token-to-verify-user-across-html-pages-using-node-js`, {
-        method: "GET",
-        headers: {
-          // authorization: authToken,
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => {
-          res.json().then((res) => console.log(res));
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-  </script>
 </html>

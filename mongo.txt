@@ -6,13 +6,17 @@ to insert data in the collection- db.collectionName.insert({'name': 'Ayush'});
 
 note- without any data inside of your db you'll not see your db in the show dbs, you'll need to enter some data inside of it 
 to see it in the db section.
-
+------------------------------
 
 to use any database- use databaseName
 to find all the entries in a collection by passing empty object- db.collectionName.find({});
-
+-------------------------------
 
 HOW DOES MONGOOSE WORK-
 We create a Schema to Define the structure
 schema ko use karke model banate hai 
 & using the model we do CRUD operation
+-----------------------------
+
+Delete all entries at once-
+db.getCollection('collectionName').deleteMany({})

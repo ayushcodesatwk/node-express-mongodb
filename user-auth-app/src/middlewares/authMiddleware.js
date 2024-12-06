@@ -1,26 +1,20 @@
-import jwt from "jsonwebtoken";
+import jwtoken from "jsonwebtoken";
 
-//next method to move on further
+//whenever user makes any request in the home page we'll simply use this 
+// function to verify if he's login
 const requireAuth = (req, res, next) => {
-  //get the token from cookies;
-  const token = req.cookies.jwtoken;
-  const secret = "chickiwikichicki";
 
-  //check if jwt exists & it is verified
-  if (token) {
-    jwt.verify(token, secret, (err, decodedToken) => {
-      if (err) {
-        console.log(err.message);
-
-        res.redirect("/login");
-      } else {
-        console.log(decodedToken);
+    const token = req.cookies.jwtoken;
+    console.log('line7-', token);
+    
+    if(token){
+        jwtoken.verify(token, "chickiwikichicki", () =>{ 
+        })
         next();
-      }
-    });
-  } else {
-    return res.status(401).redirect("/login");
-  }
-};
+    }else{
+      return res.status(401).redirect('/login');
+    }
+  
+}
 
 export default requireAuth;

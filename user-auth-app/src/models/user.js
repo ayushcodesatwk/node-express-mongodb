@@ -4,6 +4,10 @@ import mongoose from 'mongoose';
 //used third party package validator to make sure it's a valid email otherwise error
 //make sure this minlength is in small letters.
 const UserLoginSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
     email:{
         type: String,
         required: true,
@@ -14,6 +18,10 @@ const UserLoginSchema = new mongoose.Schema({
         type: String,
         required: true,
         minlength: [6, 'Mininum length of password should be 6']
+    },
+    token: {
+        type: String, 
+        default: "",
     }
 }, {timestamps: true});
 
